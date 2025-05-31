@@ -1,6 +1,14 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleSectionClick = (sectionType) => {
+    // Navigate to the products page and pass the section type as state
+    navigate('/products', { state: { section: sectionType } });
+  };
+
   return (
     <Container>
       <Row className="mb-4">
@@ -11,7 +19,11 @@ const Home = () => {
       </Row>
       <Row>
         <Col md={4}>
-          <Card className="mb-4">
+          <Card 
+            className="mb-4 shadow-sm" 
+            onClick={() => handleSectionClick('featured')}
+            style={{ cursor: 'pointer' }}
+          >
             <Card.Body>
               <Card.Title>Featured Products</Card.Title>
               <Card.Text>
@@ -21,7 +33,11 @@ const Home = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="mb-4">
+          <Card 
+            className="mb-4 shadow-sm" 
+            onClick={() => handleSectionClick('offers')}
+             style={{ cursor: 'pointer' }}
+          >
             <Card.Body>
               <Card.Title>Special Offers</Card.Title>
               <Card.Text>
@@ -31,7 +47,11 @@ const Home = () => {
           </Card>
         </Col>
         <Col md={4}>
-          <Card className="mb-4">
+          <Card 
+            className="mb-4 shadow-sm" 
+            onClick={() => handleSectionClick('newarrivals')}
+             style={{ cursor: 'pointer' }}
+          >
             <Card.Body>
               <Card.Title>New Arrivals</Card.Title>
               <Card.Text>
