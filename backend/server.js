@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/products', require('./routes/products'));
 app.use('/api/orders', require('./routes/orders'));
+app.use('/api/cart', require('./routes/cartRoutes'));
 
 // Error handling middleware
 app.use((err, req, res, next) => {

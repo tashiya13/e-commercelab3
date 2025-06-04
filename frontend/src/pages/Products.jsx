@@ -206,23 +206,6 @@ const Products = ({ searchQuery }) => {
                          <small className="text-muted mt-auto">In Stock: {product.stock}</small>
                       )}
                     </Card.Body>
-                    {/* Add to Cart button below card body to keep consistent */}                    
-                    <Button
-                        variant="primary"
-                        className="w-100"
-                        onClick={() => addToCart(product)}
-                        style={{
-                          backgroundColor: 'var(--primary-pink)',
-                          borderColor: 'var(--primary-pink)',
-                          '--bs-btn-hover-bg': 'var(--pink-hover)',
-                          '--bs-btn-hover-border-color': 'var(--pink-hover)',
-                           borderTopLeftRadius: 0,
-                           borderTopRightRadius: 0,
-                        }}
-                      >
-                        Add to Cart
-                      </Button>
-
                 </Card>
               </Col>
             ))}

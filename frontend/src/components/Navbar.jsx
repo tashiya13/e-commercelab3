@@ -1,15 +1,22 @@
 import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const Navigation = ({ searchQuery, setSearchQuery }) => {
   const { totalItems } = useCart();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
     // The actual filtering is handled in the Products page based on searchQuery state
     navigate('/products'); // Navigate to products page on search
+  };
+
+  const handleLogout = () => {
+    logout(); // Call the logout function from AuthContext
+    navigate('/login'); // Redirect to login page after logout
   };
 
   return (
@@ -66,8 +73,16 @@ const Navigation = ({ searchQuery, setSearchQuery }) => {
                 </span>
               )}
             </Nav.Link>
-            <Nav.Link as={Link} to="/login" style={{ color: 'var(--light-text)' }}>Login</Nav.Link>
-            <Nav.Link as={Link} to="/register" style={{ color: 'var(--light-text)' }}>Register</Nav.Link>
+            {user ? (
+              // Show Logout if user is logged in
+              <Nav.Link onClick={handleLogout} style={{ color: 'var(--light-text)', cursor: 'pointer' }}>Logout</Nav.Link>
+            ) : (
+              // Show Login and Register if user is not logged in
+              <>
+                <Nav.Link as={Link} to="/login" style={{ color: 'var(--light-text)' }}>Login</Nav.Link>
+                <Nav.Link as={Link} to="/register" style={{ color: 'var(--light-text)' }}>Register</Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

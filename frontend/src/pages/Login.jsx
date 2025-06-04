@@ -3,6 +3,7 @@ import { Container, Form, Button, Alert } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { userService } from '../services/api';
 import '../styles/theme.css'; // Import theme file
+import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setFormData({
@@ -35,6 +37,10 @@ const Login = () => {
       localStorage.setItem('token', response.data.token);
       // TODO: Store user info in state management (e.g., context or Redux)
       console.log('Login successful:', response.data.user);
+      
+      // Call the login function from AuthContext to update state
+      login(response.data.user);
+
       // Redirect to home page or dashboard
       navigate('/');
     } catch (err) {

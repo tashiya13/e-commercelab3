@@ -163,5 +163,60 @@ export const products = [
     brand: "Blue",
     rating: 4.7,
     stock: 22
+  },
+  {
+    id: 16,
+    name: "Nike Air Max 270",
+    description: "Comfortable running shoes with responsive cushioning and breathable mesh upper",
+    price: 150.99,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60",
+    category: "Sports",
+    brand: "Nike",
+    rating: 4.8,
+    stock: 30
+  },
+  {
+    id: 17,
+    name: "Adidas Ultraboost 22",
+    description: "Premium running shoes with Boost midsole for energy return and comfort",
+    price: 179.99,
+    image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&auto=format&fit=crop&q=60",
+    category: "Sports",
+    brand: "Adidas",
+    rating: 4.7,
+    stock: 25
+  },
+  {
+    id: 18,
+    name: "Wilson Pro Staff Tennis Racket",
+    description: "Professional tennis racket with excellent control and power",
+    price: 199.99,
+    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=500&auto=format&fit=crop&q=60",
+    category: "Sports",
+    brand: "Wilson",
+    rating: 4.6,
+    stock: 15
+  },
+  {
+    id: 19,
+    name: "Under Armour Training Shorts",
+    description: "Lightweight, quick-drying training shorts with built-in liner",
+    price: 39.99,
+    image: "https://images.unsplash.com/photo-1562183241-b937e95585b6?w=500&auto=format&fit=crop&q=60",
+    category: "Sports",
+    brand: "Under Armour",
+    rating: 4.5,
+    stock: 40
+  },
+  {
+    id: 20,
+    name: "Yoga Mat Premium",
+    description: "Non-slip yoga mat with perfect thickness for comfort and stability",
+    price: 29.99,
+    image: "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=500&auto=format&fit=crop&q=60",
+    category: "Sports",
+    brand: "Gaiam",
+    rating: 4.9,
+    stock: 50
   }
 ]; 
